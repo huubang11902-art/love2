@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Love Story ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #170b2c, #51205d, #a43b72);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* TRANG TỎ TÌNH */
+
+.card {
+    width: 90%;
+    max-width: 430px;
+    padding: 35px 22px;
+    text-align: center;
+    border: 1px solid #ffffff55;
+    border-radius: 30px;
+    background: #ffffff20;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 15px 60px #00000055;
+    z-index: 2;
+    animation: appear 1s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.badge {
+    color: #ffd4e9;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+.heart {
+    font-size: 75px;
+    margin: 20px 0;
+    animation: beat 1s infinite;
+}
+
+@keyframes beat {
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+h1 {
+    color: #ffd4e9;
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.envelope {
+    font-size: 65px;
+    margin: 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.envelope:hover {
+    transform: scale(1.2) rotate(-10deg);
+}
+
+#letter {
+    display: none;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 20px;
+    background: #ffffff20;
+    color: #ffe5f1;
+    line-height: 1.8;
+    animation: appear .8s;
+}
+
+button {
+    padding: 14px 23px;
+    border: none;
+    border-radius: 30px;
+    margin: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.yes {
+    background: linear-gradient(45deg, #ff3985, #ff8fba);
+    color: white;
+    box-shadow: 0 5px 20px #ff398570;
+}
+
+.no {
+    background: white;
+    color: #ff3985;
+}
+
+#buttons {
+    display: none;
+}
+
+#result {
+    margin-top: 20px;
+    color: #ffd4e9;
+    font-weight: bold;
+}
+
+.footer {
+    margin-top: 25px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #ffffff90;
+}
+
+/* TRANG THỨ HAI */
+
+#loveScene {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: radial-gradient(
+        circle at center,
+        #8d245e,
+        #390c38,
+        #16051f
+    );
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.love-content {
+    position: relative;
+    z-index: 102;
+    padding: 25px;
+    animation: loveAppear 2s ease;
+}
+
+.big-heart {
+    font-size: 100px;
+    animation: beat 1s infinite;
+}
+
+.love-title {
+    font-size: clamp(35px, 9vw, 55px);
+    color: #ffb6d9;
+    text-shadow: 0 0 15px #ff1493,
+                 0 0 35px #ff69b4;
+    animation: glow 2s infinite alternate;
+    margin: 20px 0;
+}
+
+.love-subtitle {font-size: 19px;
+    margin: 20px 0;
+    color: white;
+}
+
+.love-message {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #ffd6eb;
+}
+
+.love-decoration {
+    font-size: 35px;
+    margin-top: 25px;
+}
+
+@keyframes loveAppear {
+    from {
+        opacity: 0;
+        transform: scale(.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #ff1493;
+    }
+    to {
+        text-shadow: 0 0 30px #ff69b4,
+                     0 0 50px #ff1493;
+    }
+}
+
+/* MƯA TRÁI TIM */
+
+.rain-heart {
+    position: absolute;
+    top: -50px;
+    animation: heartRain linear forwards;
+    pointer-events: none;
+    z-index: 101;
+}
+
+@keyframes heartRain {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ĐIỆN THOẠI */
+
+@media (max-width: 480px) {
+    .card {
+        padding: 25px 15px;
+    }
+
+    .love-subtitle {
+        font-size: 16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TRANG ĐẦU TIÊN -->
+
+<div class="card">
+
+    <div class="badge">
+        A SPECIAL MESSAGE FOR YOU
+    </div>
+
+    <div class="heart">💗</div>
+
+    <h1>Gửi người mình thích!</h1>
+
+    <p>
+        Có một bí mật mình đã giữ trong lòng khá lâu...<br>
+        Hôm nay mình muốn nói với bạn một điều 🥺
+    </p>
+
+    <div class="envelope" onclick="openLetter()">
+        💌
+    </div>
+
+    <p style="color:#ffd4e9;font-size:13px">
+        Chạm vào phong thư để mở nhé!
+    </p>
+
+    <div id="letter">
+        <h3>Một lời nhắn dành cho bạn ❤️</h3>
+
+        <p>
+            Mình không biết bắt đầu từ đâu...
+            Nhưng mình thật sự rất quý bạn.
+            Mỗi lần được trò chuyện với bạn,
+            mình đều cảm thấy vui.
+            <br><br>
+            Mình thích bạn! 🌷
+            <br>
+            Bạn có muốn cho mình cơ hội
+            được tìm hiểu bạn không?
+        </p>
+    </div>
+
+    <div id="buttons">
+
+        <button class="yes" onclick="accept()">
+            ĐỒNG Ý ❤️
+        </button>
+
+        <button class="no" id="noBtn">
+            KHÔNG 😝
+        </button>
+
+    </div>
+
+    <div id="result"></div>
+
+    <div class="footer">
+        MADE WITH LOVE ❤️
+    </div>
+
+</div>
+
+<!-- TRANG THỨ HAI -->
+
+<div id="loveScene">
+
+    <div class="love-content">
+
+        <div class="big-heart">❤️</div>
+
+        <h1 class="love-title">
+            ANH YÊU EM
+        </h1>
+
+        <p class="love-subtitle">
+            Cảm ơn em đã xuất hiện trong cuộc đời anh.
+        </p>
+
+        <p class="love-message">
+            Mong rằng chúng ta sẽ cùng nhau<br>
+            viết nên thật nhiều kỷ niệm đẹp. 💗
+        </p>
+
+        <div class="love-decoration">
+            🌹 💖 🌹
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+// MỞ PHONG THƯ
+
+function openLetter() {document.getElementById("letter").style.display = "block";
+    document.getElementById("buttons").style.display = "block";
+}
+
+// NÚT KHÔNG CHẠY TRỐN
+
+const noBtn = document.getElementById("noBtn");
+
+function moveButton() {
+    const maxX = Math.max(10, window.innerWidth - noBtn.offsetWidth - 20);
+    const maxY = Math.max(10, window.innerHeight - noBtn.offsetHeight - 20);
+
+    noBtn.style.position = "fixed";
+    noBtn.style.left = Math.max(10, Math.random() * maxX) + "px";
+    noBtn.style.top = Math.max(10, Math.random() * maxY) + "px";
+}
+
+noBtn.addEventListener("mouseenter", moveButton);
+
+noBtn.addEventListener("touchstart", function(e) {
+    e.preventDefault();
+    moveButton();
+});
+
+// KHI BẤM ĐỒNG Ý
+
+function accept() {
+
+    // Ẩn trang đầu
+    document.querySelector(".card").style.display = "none";
+
+    // Chuyển sang trang thứ hai
+    const scene = document.getElementById("loveScene");
+    scene.style.display = "flex";
+
+    // Bắt đầu mưa trái tim
+    setInterval(createRainHeart, 120);
+}
+
+// TẠO MƯA TRÁI TIM
+
+function createRainHeart() {
+
+    const scene = document.getElementById("loveScene");
+
+    const heart = document.createElement("div");
+
+    heart.className = "rain-heart";
+
+    heart.innerHTML = ["❤️", "💗", "💕", "💖", "💘"][
+        Math.floor(Math.random() * 5)
+    ];
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (15 + Math.random() * 30) + "px";
+
+    heart.style.animationDuration =
+        (3 + Math.random() * 4) + "s";
+
+    scene.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 8000);
+}
+
+</script>
+
+</body>
+</html>
